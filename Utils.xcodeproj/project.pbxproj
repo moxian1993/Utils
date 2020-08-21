@@ -150,11 +150,11 @@
 		CDA64E3B1ED9784800BE2EEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CDAB0C5924EEE35200C2EA3D /* objc-utils */,
 				CDA64E421ED9784800BE2EEA /* ViewController.h */,
 				CDA64E431ED9784800BE2EEA /* ViewController.m */,
 				CDA64E3F1ED9784800BE2EEA /* AppDelegate.h */,
 				CDA64E401ED9784800BE2EEA /* AppDelegate.m */,
+				CDAB0C5924EEE35200C2EA3D /* objc-utils */,
 				CDA64E3C1ED9784800BE2EEA /* Supporting Files */,
 			);
 			path = Utils;
