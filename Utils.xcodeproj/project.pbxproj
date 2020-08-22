@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E4810C0D8B2B2B5860BE65D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB728312F3006D928F1516 /* Pods_Utils.framework */; };
 		AE27AA309CA01FC67378FA71 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51455964F4A681CCCF83677 /* Pods_UtilsTests.framework */; };
+		CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */; };
 		CDA64E3E1ED9784800BE2EEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E3D1ED9784800BE2EEA /* main.m */; };
 		CDA64E411ED9784800BE2EEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E401ED9784800BE2EEA /* AppDelegate.m */; };
 		CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E431ED9784800BE2EEA /* ViewController.m */; };
@@ -48,6 +49,8 @@
 		4D6D89B3C43BCA8C7A36FED6 /* Pods-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51CB722788B4117391C6527B /* Pods-Utils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.debug.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.debug.xcconfig"; sourceTree = "<group>"; };
 		A51455964F4A681CCCF83677 /* Pods_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD3CA64A24F1458C004764B7 /* UIButton+AttStrAlignment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AttStrAlignment.h"; sourceTree = "<group>"; };
+		CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AttStrAlignment.m"; sourceTree = "<group>"; };
 		CDA64E391ED9784800BE2EEA /* Utils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA64E3D1ED9784800BE2EEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA64E3F1ED9784800BE2EEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 		CDAB0C5F24EEE4BF00C2EA3D /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				CD3CA64A24F1458C004764B7 /* UIButton+AttStrAlignment.h */,
+				CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */,
 				CDAB0C6D24EEECDF00C2EA3D /* UIButton+Alignment.h */,
 				CDAB0C6C24EEECDF00C2EA3D /* UIButton+Alignment.m */,
 				CDAB0C6F24EEEE5600C2EA3D /* UIButton+TouchInsets.h */,
@@ -500,6 +505,7 @@
 			files = (
 				CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */,
 				CDAB0C6E24EEECDF00C2EA3D /* UIButton+Alignment.m in Sources */,
+				CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */,
 				CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */,
 				CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */,
 				CDA64E411ED9784800BE2EEA /* AppDelegate.m in Sources */,
