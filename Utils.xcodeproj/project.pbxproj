@@ -21,6 +21,8 @@
 		CDAB0C6E24EEECDF00C2EA3D /* UIButton+Alignment.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB0C6C24EEECDF00C2EA3D /* UIButton+Alignment.m */; };
 		CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB0C7024EEEE5600C2EA3D /* UIButton+TouchInsets.m */; };
 		CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAB0C7624EEF0CF00C2EA3D /* UtilsPrivate.m */; };
+		CDAEFA2624F7923D00362E84 /* YYImage+LoopCount.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA2524F7923D00362E84 /* YYImage+LoopCount.m */; };
+		CDAEFA2F24F79D1800362E84 /* Reload.gif in Resources */ = {isa = PBXBuildFile; fileRef = CDAEFA2E24F79D1800362E84 /* Reload.gif */; };
 		EBACE6848DBB9ADC734F76C4 /* Pods_Utils_UtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D15662AC6D3753E670ACD66 /* Pods_Utils_UtilsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,9 @@
 		CDAB0C7024EEEE5600C2EA3D /* UIButton+TouchInsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TouchInsets.m"; sourceTree = "<group>"; };
 		CDAB0C7524EEF0CF00C2EA3D /* UtilsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsPrivate.h; sourceTree = "<group>"; };
 		CDAB0C7624EEF0CF00C2EA3D /* UtilsPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilsPrivate.m; sourceTree = "<group>"; };
+		CDAEFA2424F7923D00362E84 /* YYImage+LoopCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YYImage+LoopCount.h"; sourceTree = "<group>"; };
+		CDAEFA2524F7923D00362E84 /* YYImage+LoopCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YYImage+LoopCount.m"; sourceTree = "<group>"; };
+		CDAEFA2E24F79D1800362E84 /* Reload.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Reload.gif; sourceTree = "<group>"; };
 		E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +162,7 @@
 				CDA64E431ED9784800BE2EEA /* ViewController.m */,
 				CDA64E3F1ED9784800BE2EEA /* AppDelegate.h */,
 				CDA64E401ED9784800BE2EEA /* AppDelegate.m */,
+				CDAEFA2E24F79D1800362E84 /* Reload.gif */,
 				CDAB0C5924EEE35200C2EA3D /* objc-utils */,
 				CDA64E3C1ED9784800BE2EEA /* Supporting Files */,
 			);
@@ -206,6 +212,7 @@
 		CDAB0C5A24EEE35200C2EA3D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CDAEFA2324F7912000362E84 /* gif */,
 				CDAB0C5F24EEE4BF00C2EA3D /* Button */,
 			);
 			path = UIKit;
@@ -238,6 +245,15 @@
 				CDAB0C7024EEEE5600C2EA3D /* UIButton+TouchInsets.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		CDAEFA2324F7912000362E84 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEFA2424F7923D00362E84 /* YYImage+LoopCount.h */,
+				CDAEFA2524F7923D00362E84 /* YYImage+LoopCount.m */,
+			);
+			path = gif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDAEFA2F24F79D1800362E84 /* Reload.gif in Resources */,
 				CDA64E4C1ED9784800BE2EEA /* LaunchScreen.storyboard in Resources */,
 				CDA64E491ED9784800BE2EEA /* Assets.xcassets in Resources */,
 				CDA64E471ED9784800BE2EEA /* Main.storyboard in Resources */,
@@ -390,6 +407,7 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NerdyUI/NerdyUI.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -398,6 +416,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NerdyUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -482,6 +501,7 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NerdyUI/NerdyUI.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -490,6 +510,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NerdyUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -504,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */,
+				CDAEFA2624F7923D00362E84 /* YYImage+LoopCount.m in Sources */,
 				CDAB0C6E24EEECDF00C2EA3D /* UIButton+Alignment.m in Sources */,
 				CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */,
 				CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */,

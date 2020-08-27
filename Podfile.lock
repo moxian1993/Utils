@@ -29,6 +29,9 @@ PODS:
   - SDWebImage (5.8.4):
     - SDWebImage/Core (= 5.8.4)
   - SDWebImage/Core (5.8.4)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -36,6 +39,7 @@ DEPENDENCIES:
   - MJRefresh
   - NerdyUI
   - SDWebImage
+  - YYKit
 
 SPEC REPOS:
   trunk:
@@ -44,6 +48,7 @@ SPEC REPOS:
     - MJRefresh
     - NerdyUI
     - SDWebImage
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -51,7 +56,8 @@ SPEC CHECKSUMS:
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   NerdyUI: ae4506046b544a5cdc0873a58c1ece61b29631d0
   SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 98d97ccc952814a1e91cd30d2b5371afb9e1d400
+PODFILE CHECKSUM: b8fd5338a0c3301ee9bc5efb29c85725a7e95e04
 
 COCOAPODS: 1.9.1

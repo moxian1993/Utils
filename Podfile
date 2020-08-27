@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.3'
 
 target 'Utils' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -11,7 +11,7 @@ pod 'NerdyUI'
 pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'MJRefresh'
-
+pod 'YYKit'
 
   target 'UtilsTests' do
     inherit! :search_paths
