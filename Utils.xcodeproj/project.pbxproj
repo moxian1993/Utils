@@ -28,6 +28,7 @@
 		CDAEFA3D24F7C52200362E84 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA3B24F7C52200362E84 /* UIImage+Tint.m */; };
 		CDAEFA4424F7C60F00362E84 /* CALayer+AnimationPause.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA4224F7C60F00362E84 /* CALayer+AnimationPause.m */; };
 		CDAEFA4724F7C64200362E84 /* ClassFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA4524F7C64200362E84 /* ClassFactory.m */; };
+		CDAEFA5724F7FA6800362E84 /* MORollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA5624F7FA6800362E84 /* MORollingView.m */; };
 		EBACE6848DBB9ADC734F76C4 /* Pods_Utils_UtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D15662AC6D3753E670ACD66 /* Pods_Utils_UtilsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,9 @@
 		CDAEFA4324F7C60F00362E84 /* CALayer+AnimationPause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+AnimationPause.h"; sourceTree = "<group>"; };
 		CDAEFA4524F7C64200362E84 /* ClassFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassFactory.m; sourceTree = "<group>"; };
 		CDAEFA4624F7C64200362E84 /* ClassFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassFactory.h; sourceTree = "<group>"; };
+		CDAEFA4824F7C7A100362E84 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		CDAEFA5524F7FA6800362E84 /* MORollingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MORollingView.h; sourceTree = "<group>"; };
+		CDAEFA5624F7FA6800362E84 /* MORollingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MORollingView.m; sourceTree = "<group>"; };
 		E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +249,7 @@
 				CDAEFA3824F7C4D400362E84 /* ZWSingleton.h */,
 				CDAB0C7524EEF0CF00C2EA3D /* UtilsPrivate.h */,
 				CDAB0C7624EEF0CF00C2EA3D /* UtilsPrivate.m */,
+				CDAEFA4824F7C7A100362E84 /* PrefixHeader.pch */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -285,6 +290,8 @@
 			children = (
 				CDAEFA3624F7C45800362E84 /* MOLrcBlendLabel.h */,
 				CDAEFA3524F7C45800362E84 /* MOLrcBlendLabel.m */,
+				CDAEFA5524F7FA6800362E84 /* MORollingView.h */,
+				CDAEFA5624F7FA6800362E84 /* MORollingView.m */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -582,6 +589,7 @@
 				CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */,
 				CDAEFA4724F7C64200362E84 /* ClassFactory.m in Sources */,
 				CDAEFA3724F7C45800362E84 /* MOLrcBlendLabel.m in Sources */,
+				CDAEFA5724F7FA6800362E84 /* MORollingView.m in Sources */,
 				CDAEFA3324F7A75000362E84 /* NSString+Utils.m in Sources */,
 				CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */,
 				CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */,

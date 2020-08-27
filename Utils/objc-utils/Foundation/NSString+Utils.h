@@ -21,6 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 /** 判断字符串相等 (特殊：两个nil也算相等) */
 - (BOOL)utils_isEqualTo:(NSString *)str;
 
+#pragma mark -
+#pragma mark - convert
+
+
 
 #pragma mark -
 #pragma mark - trim
@@ -41,7 +45,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获得特定字符串的中字符串
 /// @param strLeft 左边匹配字符串
 /// @param strRight 右边匹配字符串
-- (NSString*)utils_substringWithinBoundsLeft:(NSString*)strLeft right:(NSString*)strRight;
+- (NSString *)utils_substringWithinBoundsLeft:(NSString*)strLeft right:(NSString*)strRight;
+
+- (NSString *)utils_substringFromString:(NSString *)str;
+- (NSString *)utils_substringToString:(NSString*)str;
+- (NSString *)utils_substringFromIndex:(NSInteger)begin toIndex:(NSInteger)end;
+
+
+#pragma mark -
+#pragma mark - jsonStr
+- (NSDictionary *)utils_jsonStrTurnDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

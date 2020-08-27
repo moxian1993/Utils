@@ -62,12 +62,16 @@
 
 
 - (NSArray *)utils_splitOnChar:(char *)ch {
+    if (!ch) {
+        return nil;
+    }
     NSString *str = [NSString stringWithCString:ch encoding:NSUTF8StringEncoding];
     if (str) {
         NSArray *result = [self componentsSeparatedByString:str];
         return result;
+    } else {
+        return nil;
     }
-    else return nil;
 }
 
 - (NSString*)utils_substringWithinBoundsLeft:(NSString*)strLeft right:(NSString*)strRight {
@@ -75,6 +79,9 @@
     NSString *strSub;
     
     NSRange range;
+    if (!strLeft || !strRight) {
+        return nil;
+    }
     range = [self rangeOfString:strLeft options:0];
     
     if (range.location == NSNotFound) {
@@ -98,6 +105,46 @@
 }
 
 
+- (NSString *)utils_substringFromString:(NSString *)str {
+    if (str) {
+        NSRange range = [self rangeOfString:str];
+        if (range.length > 0) {
+            return [self substringFromIndex:range.location + range.length];
+        } else {
+            return nil;
+        }
+    }
+    return nil;
+}
 
+- (NSString *)utils_substringToString:(NSString*)str {
+    if (str) {
+        NSArray *component = [self componentsSeparatedByString:str];
+        return component[0];
+    } else {
+        return self;
+    }
+}
+
+- (NSString *)utils_substringFromIndex:(NSInteger)begin toIndex:(NSInteger)end {
+    if (end <= begin) {
+        return @"";
+    }
+    NSRange range = NSMakeRange(begin, end - begin);
+    return [self substringWithRange:range];
+}
+
+
+- (NSDictionary *)utils_jsonStrTurnDictionary {
+    if ([self utils_isEqualTo:self]) {
+        return nil;
+    }
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    if (jsonData == nil) {
+        return nil;
+    }
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
+    return dic;
+}
 
 @end
