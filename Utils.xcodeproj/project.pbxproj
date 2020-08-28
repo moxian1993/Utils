@@ -29,6 +29,10 @@
 		CDAEFA4424F7C60F00362E84 /* CALayer+AnimationPause.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA4224F7C60F00362E84 /* CALayer+AnimationPause.m */; };
 		CDAEFA4724F7C64200362E84 /* ClassFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA4524F7C64200362E84 /* ClassFactory.m */; };
 		CDAEFA5724F7FA6800362E84 /* MORollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA5624F7FA6800362E84 /* MORollingView.m */; };
+		CDAEFA5E24F8191300362E84 /* UIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA5D24F8191300362E84 /* UIColor+Utils.m */; };
+		CDAEFA6124F82FC900362E84 /* UIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA6024F82FC900362E84 /* UIImage+Utils.m */; };
+		CDAEFA6524F9362C00362E84 /* UIViewController+CurrentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA6424F9362C00362E84 /* UIViewController+CurrentVC.m */; };
+		CDAEFA6B24F957FC00362E84 /* UIButton+FadeOut.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFA6A24F957FC00362E84 /* UIButton+FadeOut.m */; };
 		EBACE6848DBB9ADC734F76C4 /* Pods_Utils_UtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D15662AC6D3753E670ACD66 /* Pods_Utils_UtilsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +102,14 @@
 		CDAEFA4824F7C7A100362E84 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CDAEFA5524F7FA6800362E84 /* MORollingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MORollingView.h; sourceTree = "<group>"; };
 		CDAEFA5624F7FA6800362E84 /* MORollingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MORollingView.m; sourceTree = "<group>"; };
+		CDAEFA5C24F8191300362E84 /* UIColor+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Utils.h"; sourceTree = "<group>"; };
+		CDAEFA5D24F8191300362E84 /* UIColor+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Utils.m"; sourceTree = "<group>"; };
+		CDAEFA5F24F82FC900362E84 /* UIImage+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utils.h"; sourceTree = "<group>"; };
+		CDAEFA6024F82FC900362E84 /* UIImage+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utils.m"; sourceTree = "<group>"; };
+		CDAEFA6324F9362C00362E84 /* UIViewController+CurrentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentVC.h"; sourceTree = "<group>"; };
+		CDAEFA6424F9362C00362E84 /* UIViewController+CurrentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentVC.m"; sourceTree = "<group>"; };
+		CDAEFA6924F957FC00362E84 /* UIButton+FadeOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+FadeOut.h"; sourceTree = "<group>"; };
+		CDAEFA6A24F957FC00362E84 /* UIButton+FadeOut.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FadeOut.m"; sourceTree = "<group>"; };
 		E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +244,8 @@
 		CDAB0C5A24EEE35200C2EA3D /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CDAEFA6224F9361200362E84 /* View */,
+				CDAEFA5824F818B100362E84 /* Color */,
 				CDAEFA4124F7C5FD00362E84 /* Layer */,
 				CDAEFA3A24F7C50800362E84 /* Image */,
 				CDAEFA3424F7C45800362E84 /* Label */,
@@ -257,6 +271,8 @@
 		CDAB0C5F24EEE4BF00C2EA3D /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				CDAEFA6924F957FC00362E84 /* UIButton+FadeOut.h */,
+				CDAEFA6A24F957FC00362E84 /* UIButton+FadeOut.m */,
 				CD3CA64A24F1458C004764B7 /* UIButton+AttStrAlignment.h */,
 				CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */,
 				CDAB0C6D24EEECDF00C2EA3D /* UIButton+Alignment.h */,
@@ -301,6 +317,8 @@
 			children = (
 				CDAEFA3C24F7C52200362E84 /* UIImage+Tint.h */,
 				CDAEFA3B24F7C52200362E84 /* UIImage+Tint.m */,
+				CDAEFA5F24F82FC900362E84 /* UIImage+Utils.h */,
+				CDAEFA6024F82FC900362E84 /* UIImage+Utils.m */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -312,6 +330,24 @@
 				CDAEFA4224F7C60F00362E84 /* CALayer+AnimationPause.m */,
 			);
 			path = Layer;
+			sourceTree = "<group>";
+		};
+		CDAEFA5824F818B100362E84 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEFA5C24F8191300362E84 /* UIColor+Utils.h */,
+				CDAEFA5D24F8191300362E84 /* UIColor+Utils.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		CDAEFA6224F9361200362E84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEFA6324F9362C00362E84 /* UIViewController+CurrentVC.h */,
+				CDAEFA6424F9362C00362E84 /* UIViewController+CurrentVC.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,14 +619,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */,
+				CDAEFA6524F9362C00362E84 /* UIViewController+CurrentVC.m in Sources */,
 				CDAEFA4424F7C60F00362E84 /* CALayer+AnimationPause.m in Sources */,
 				CDAEFA2624F7923D00362E84 /* YYImage+LoopCount.m in Sources */,
+				CDAEFA5E24F8191300362E84 /* UIColor+Utils.m in Sources */,
 				CDAB0C6E24EEECDF00C2EA3D /* UIButton+Alignment.m in Sources */,
 				CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */,
 				CDAEFA4724F7C64200362E84 /* ClassFactory.m in Sources */,
+				CDAEFA6124F82FC900362E84 /* UIImage+Utils.m in Sources */,
 				CDAEFA3724F7C45800362E84 /* MOLrcBlendLabel.m in Sources */,
 				CDAEFA5724F7FA6800362E84 /* MORollingView.m in Sources */,
 				CDAEFA3324F7A75000362E84 /* NSString+Utils.m in Sources */,
+				CDAEFA6B24F957FC00362E84 /* UIButton+FadeOut.m in Sources */,
 				CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */,
 				CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */,
 				CDA64E411ED9784800BE2EEA /* AppDelegate.m in Sources */,
