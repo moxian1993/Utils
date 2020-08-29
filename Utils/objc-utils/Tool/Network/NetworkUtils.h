@@ -17,6 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkUtils : NSObject
 
+/// 获取网络运营商名称
++ (NSString *)getPhoneNetworkCarrierName;
+
+/// 国家码
++ (NSString *)getCountryISO;
++ (NSString *)getLocalCountryISO;
+
 @end
 
 NS_ASSUME_NONNULL_END
