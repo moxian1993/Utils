@@ -17,14 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Utils)
 
+
+/// resize
+/// @param size size
 - (UIImage *)resize:(CGSize)size;
 
 /// 绘制文字图片
-/// @param text 内容
-/// @param targetSize 目标大小
-/// @param font 字体
-/// @param color 颜色
-/// @param fillColor 背景色
+/// @param text text
+/// @param targetSize targetSize
+/// @param font font
+/// @param color color
+/// @param fillColor fillColor
 + (UIImage *)imageFromText:(NSString *)text
                       size:(CGSize)targetSize
                       font:(UIFont *)font
@@ -32,13 +35,20 @@ NS_ASSUME_NONNULL_BEGIN
                  fillColor:(UIColor *)fillColor;
 
 
+/// imageWithData
+/// @param data data
+/// @param size size
 + (UIImage *)imageWithData:(NSData *)data size:(CGSize)size;
 
 
 /// 获得单位颜色图片
-/// @param color 颜色
+/// @param color color
 + (UIImage *)imageWithColor:(UIColor *)color;
    
+
+/// 按坐标截出image
+/// @param rect rect
+- (UIImage *)cropImageToRect:(CGRect)rect;
 
 @end
 
