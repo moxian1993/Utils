@@ -10,15 +10,15 @@
 
 @implementation UIImage (Capture)
 
-+ (UIImage *)captured:(id)view cropRect:(CGRect)cropRect {
++ (UIImage *)capture:(id)view cropRect:(CGRect)cropRect {
     UIImage *image = nil;
     /* 转换成完整图片 */
     if ([view isKindOfClass:[UITableView class]]) {
-        image = [self capturedTableView:view];
+        image = [self captureTableView:view];
     } else if ([view isKindOfClass:[UIScrollView class]]) {
-        image = [self capturedScrollView:view];
+        image = [self captureScrollView:view];
     } else if ([view isKindOfClass:[UIView class]]) {
-        image = [self capturedView:view];
+        image = [self captureView:view];
     } else {
         return nil;
     }
@@ -40,7 +40,7 @@
 }
 
 
-+ (UIImage *)capturedView:(UIView *)view {
++ (UIImage *)captureView:(UIView *)view {
     /**
      第一个参数表示区域大小。
      第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。
@@ -54,7 +54,7 @@
 }
 
 
-+ (UIImage *)capturedScrollView:(UIScrollView *)scrollView {
++ (UIImage *)captureScrollView:(UIScrollView *)scrollView {
     UIImage* image = nil;
     UIGraphicsBeginImageContextWithOptions(scrollView.contentSize, NO, [UIScreen mainScreen].scale);
     {
@@ -75,7 +75,7 @@
 }
 
 
-+ (UIImage *)capturedTableView:(UITableView *)tableView {
++ (UIImage *)captureTableView:(UITableView *)tableView {
     CGPoint savedContentOffset = tableView.contentOffset;
     ///计算画布所需实际高度
     CGFloat contentHeight = 0;

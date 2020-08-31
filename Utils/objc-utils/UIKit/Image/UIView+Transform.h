@@ -1,5 +1,5 @@
 //
-//  UIImage+Capture.h
+//  UIView+Transform.h
 //  Utils
 //
 //  Created by Xian Mo on 2020/9/1.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (Capture)
+@interface UIView (Transform)
 
 /**
 代码截图
@@ -19,7 +19,6 @@ NS_ASSUME_NONNULL_BEGIN
 @return 裁剪完成的图片
 */
 // Captured in app, Maybe without considering the Pixels
-// view transform to image
 + (UIImage *)capture:(id)view cropRect:(CGRect)cropRect;
 + (UIImage *)captureView:(UIView *)view;
 + (UIImage *)captureScrollView:(UIScrollView *)scrollView;
