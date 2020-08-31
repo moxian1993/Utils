@@ -8,35 +8,39 @@
 
 #import <UIKit/UIKit.h>
 
+#define HEXCOLOR(a)            [UIColor utils_colorWithHex:(a)]
+#define RANDOMCOLOR            [UIColor utils_randomColor]
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (Utils)
 
-/// 使用 16 进制数字创建颜色，例如 0xFF0000 创建红色
-///
-/// @param hex 16 进制无符号32位整数
-///
-/// @return 颜色
-+ (instancetype)utils_colorWithHex:(uint32_t)hex;
+// 使用 16 进制数字创建颜色，例如 0xFF0000 创建红色
++ (UIColor *)utils_colorWithHex:(uint32_t)hex;
++ (UIColor *)utils_colorWithHex:(uint32_t)hex alpha:(CGFloat)alpha;
++ (UIColor *)utils_colorWithHexStr:(NSString *)hexString;
 
-/// 生成随机颜色
-///
-/// @return 随机颜色
-+ (instancetype)utils_randomColor;
-
-/// 使用 R / G / B 数值创建颜色
-///
-/// @param red   red
-/// @param green green
-/// @param blue  blue
-///
-/// @return 颜色
-+ (instancetype)utils_colorWithRed:(uint8_t)red green:(uint8_t)green blue:(uint8_t)blue;
-
-
-
-
+// 生成随机颜色
++ (UIColor *)utils_randomColor;
++ (UIColor *)utils_randomColorWithAlpha:(CGFloat)alpha;
 
 @end
+
+
+@interface UIColor (Component)
+
+// 判断是否是亮色(未验证)
+- (BOOL)utils_isLightColor;
+
+// 获取RGB值(未验证)
+- (void)utils_getRGBComponents:(CGFloat[_Nullable 3])components;
+// 获取色值
+- (int)utils_getRed;
+- (int)utils_getGreen;
+- (int)utils_getBlue;
+- (CGFloat)utils_getAlpha;
+
+@end
+
 
 NS_ASSUME_NONNULL_END

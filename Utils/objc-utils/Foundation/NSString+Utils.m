@@ -147,4 +147,17 @@
     return dic;
 }
 
+
+
++ (NSString *)safecheck:(id)origin defaultString:(NSString *)string {
+    if ([origin respondsToSelector:@selector(length)]) {
+        NSString *s = origin;
+        return s.length == 0 ? string : origin;
+    }
+    if (origin == nil || [origin isKindOfClass:[NSNull class]]) {
+        return string;
+    }
+    return nil;
+}
+
 @end

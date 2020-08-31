@@ -16,6 +16,23 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NetworkUtils : NSObject
+/**
+ 判断网络是否可用
+ (2G环境也划分为无网环境)
+*/
++ (BOOL)isNetworkAvailable;
+
+/** 是否在2G网络环境 */
++ (BOOL)isIn2G;
+
+/** 是否在3G\4G网络环境 */
++ (BOOL)isIn4Gor3G;
+
+/** 获取Publick IP */
++ (NSString *)getPublicIP;
+
+/** 获取网络连接类型 */
++ (NSString *)getNetconnType;
 
 /// 获取网络运营商名称
 + (NSString *)getPhoneNetworkCarrierName;

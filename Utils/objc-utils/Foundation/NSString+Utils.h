@@ -56,6 +56,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - jsonStr
 - (NSDictionary *)utils_jsonStrTurnDictionary;
 
+
+#pragma mark -
+#pragma mark - safety
+/// 返回安全字符串
+/// @param origin origin
+/// @param string 默认值
++ (NSString *)safecheck:(id)origin defaultString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

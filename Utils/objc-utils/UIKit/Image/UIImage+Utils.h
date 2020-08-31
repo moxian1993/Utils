@@ -17,10 +17,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Utils)
 
-
 /// resize
 /// @param size size
 - (UIImage *)resize:(CGSize)size;
+- (UIImage *)autoSize:(CGSize)size;
+- (UIImage *)imageScalingAndCroppingForSize:(CGSize)size;
+
 
 /// 绘制文字图片
 /// @param text text
@@ -49,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 按坐标截出image
 /// @param rect rect
 - (UIImage *)cropImageToRect:(CGRect)rect;
+
+
+/// 图片方向旋转
+/// @param orientation orientation
+- (UIImage *)imageRotation:(UIImageOrientation)orientation;
 
 @end
 
