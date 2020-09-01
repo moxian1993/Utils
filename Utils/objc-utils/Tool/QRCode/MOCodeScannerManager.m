@@ -108,10 +108,10 @@ static MOCodeScannerManager *_instance;
 - (void)setScanRect:(CGRect)rect {
     //设置识别区域，这个值是按比例0~1设置，而且X、Y要调换位置，width、height调换位置
     AVCaptureMetadataOutput *output = self.session.outputs.lastObject;
-    output.rectOfInterest = CGRectMake(rect.origin.y/SCREEN_HEIGHT,
-                                       rect.origin.x/SCREEN_WIDTH,
-                                       rect.size.height/SCREEN_HEIGHT,
-                                       rect.size.width/SCREEN_WIDTH);
+    output.rectOfInterest = CGRectMake(rect.origin.y/Screen_Height,
+                                       rect.origin.x/Screen_Width,
+                                       rect.size.height/Screen_Height,
+                                       rect.size.width/Screen_Width);
 }
 
 - (void)setScanScale:(CGFloat)scale {

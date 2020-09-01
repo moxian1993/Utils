@@ -1,15 +1,29 @@
 //
-//  UIFont+FontName.m
+//  UIFont+Extension.m
 //  Utils
 //
-//  Created by Xian Mo on 2020/8/31.
+//  Created by Xian Mo on 2020/9/2.
 //  Copyright © 2020 Mo. All rights reserved.
 //
 
-#import "UIFont+FontName.h"
+#import "UIFont+Extension.h"
 #import <CoreText/CoreText.h>
 
-@implementation UIFont (FontName)
+@implementation UIFont (Extension)
+
+/**
+ *  register font with specified path
+ *
+ *  @param fontPath the font resource path of .ttf
+ */
++ (void)registerFontWithFontName:(NSString *)fontName inBundle:(NSBundle *)bundle {
+    NSURL *fontURL = [bundle URLForResource:fontName withExtension:@".ttf"];
+    NSString *e = [NSString stringWithFormat:@"you must provide %@.ttf", fontName];
+    NSAssert(fontURL != nil, e);
+    CFErrorRef error;
+    CTFontManagerRegisterFontsForURL((__bridge CFURLRef)fontURL, kCTFontManagerScopeNone, &error);
+}
+
 
 /** 获取系统拥有的所有字体的名称数组 */
 + (NSArray *)allFontNames {
@@ -72,6 +86,5 @@
     }
     return customFontArray;
 }
-
 
 @end

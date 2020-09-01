@@ -1,8 +1,8 @@
 //
-//  UIFont+FontName.h
+//  UIFont+Extension.h
 //  Utils
 //
-//  Created by Xian Mo on 2020/8/31.
+//  Created by Xian Mo on 2020/9/2.
 //  Copyright © 2020 Mo. All rights reserved.
 //
 
@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIFont (FontName)
+@interface UIFont (Extension)
+
+/** register font with specified path */
++ (void)registerFontWithFontName:(NSString *)fontName inBundle:(NSBundle *)bundle;
 
 /** 获取系统拥有的所有字体的名称数组 */
 + (NSArray *)allFontNames;

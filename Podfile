@@ -12,6 +12,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'MJRefresh'
 pod 'YYKit'
+pod 'FMDB'
 
   target 'UtilsTests' do
     inherit! :search_paths
