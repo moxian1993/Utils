@@ -78,6 +78,7 @@
 		CDAEFB2424FE96B700362E84 /* NumberFormatterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2224FE96B600362E84 /* NumberFormatterUtils.m */; };
 		CDAEFB2724FE97EB00362E84 /* CameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2624FE97EB00362E84 /* CameraUtils.m */; };
 		CDAEFB2A24FE981800362E84 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2924FE981800362E84 /* UserDefaultsManager.m */; };
+		CDAEFB2F24FE99CC00362E84 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */; };
 		EBACE6848DBB9ADC734F76C4 /* Pods_Utils_UtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D15662AC6D3753E670ACD66 /* Pods_Utils_UtilsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -244,6 +245,8 @@
 		CDAEFB2624FE97EB00362E84 /* CameraUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraUtils.m; sourceTree = "<group>"; };
 		CDAEFB2824FE981800362E84 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		CDAEFB2924FE981800362E84 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefine.swift; sourceTree = "<group>"; };
+		CDAEFB2E24FE99CC00362E84 /* Utils-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Utils-Bridging-Header.h"; sourceTree = "<group>"; };
 		E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +334,7 @@
 				CDAEFB0624FE1BF500362E84 /* fly1.gif */,
 				CDAEFB0524FE1BF500362E84 /* fly2.gif */,
 				CDAB0C5924EEE35200C2EA3D /* objc-utils */,
+				CDAEFB2B24FE99CC00362E84 /* swift-utils */,
 				CDA64E3C1ED9784800BE2EEA /* Supporting Files */,
 			);
 			path = Utils;
@@ -619,6 +623,23 @@
 				CDAEFAD524FC2F7900362E84 /* XFUserRightsHelper.m */,
 			);
 			path = Authority;
+			sourceTree = "<group>";
+		};
+		CDAEFB2B24FE99CC00362E84 /* swift-utils */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEFB2C24FE99CC00362E84 /* Common */,
+			);
+			path = "swift-utils";
+			sourceTree = "<group>";
+		};
+		CDAEFB2C24FE99CC00362E84 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */,
+				CDAEFB2E24FE99CC00362E84 /* Utils-Bridging-Header.h */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -914,6 +935,7 @@
 				CDAEFA8A24FA506800362E84 /* TimeUtils.m in Sources */,
 				CDAEFA8724FA432B00362E84 /* FileUtils.m in Sources */,
 				CDAEFA6124F82FC900362E84 /* UIImage+Utils.m in Sources */,
+				CDAEFB2F24FE99CC00362E84 /* GlobalDefine.swift in Sources */,
 				CDAEFAD724FC2F7900362E84 /* XFUserRightsHelper.m in Sources */,
 				CDAEFAEF24FD697A00362E84 /* UIImage+Color.m in Sources */,
 				CDAEFAF524FD70B400362E84 /* UIImage+Blur.m in Sources */,
@@ -1128,6 +1150,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D6D89B3C43BCA8C7A36FED6 /* Pods-UtilsTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
@@ -1142,6 +1165,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44DC9065AA931E876006F5EB /* Pods-UtilsTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
@@ -1156,6 +1180,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1169,6 +1194,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
