@@ -10,6 +10,30 @@
 
 @implementation UIImage (Utils)
 
+/// 图片切圆角
+/// @param radius 角度
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius {
+    
+    CGRect rect = (CGRect){0.f, 0.f, self.size};
+    //1, 开启图形上下文
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    //2, 获取图形上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //4, 创建路径
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+    //5, 添加路径
+    CGContextAddPath(ctx, path.CGPath);
+    //6, 裁减
+    CGContextClip(ctx);
+    [self drawInRect:rect];
+    //7, 获取最终图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    //3, 关闭上下文
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
 - (UIImage *)resize:(CGSize)size {
     if (CGSizeEqualToSize(self.size, size)) return self;
     
@@ -274,5 +298,36 @@
 
     return newPic;
 }
+
+
+/// 判断图片格式
+/// @param data image data
++ (NSString *)typeForImageData:(NSData *)data {
+    uint8_t c;
+    [data getBytes:&c length:1];
+    switch (c) {
+        case 0xFF:
+            return @"jpeg";
+        case 0x89:
+            return @"png";
+        case 0x47:
+            return @"gif";
+        case 0x49:
+        case 0x4D:
+            return @"tiff";
+        case 0x52:
+            if ([data length] < 12) {
+                return nil;
+            }
+            NSString *testString = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(0, 12)] encoding:NSASCIIStringEncoding];
+            
+            if ([testString hasPrefix:@"RIFF"] && [testString hasSuffix:@"WEBP"]) {
+                return @"webp";
+            }
+            return nil;
+    }
+    return nil;
+}
+
 
 @end

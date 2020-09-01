@@ -5,12 +5,12 @@
 //  Created by Xian Mo on 2020/8/29.
 //  Copyright © 2020 Mo. All rights reserved.
 
-// Reachability
-// https://github.com/tonymillion/Reachability
-
-// RealReachability
-// https://github.com/dustturtle/RealReachability
-
+/**
+ Reachability
+ https://github.com/tonymillion/Reachability
+ RealReachability
+ https://github.com/dustturtle/RealReachability
+ */
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -28,18 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 /** 是否在3G\4G网络环境 */
 + (BOOL)isIn4Gor3G;
 
-/** 获取Publick IP */
-+ (NSString *)getPublicIP;
-
 /** 获取网络连接类型 */
 + (NSString *)getNetconnType;
-
-/// 获取网络运营商名称
-+ (NSString *)getPhoneNetworkCarrierName;
-
-/// 国家码
-+ (NSString *)getCountryISO;
-+ (NSString *)getLocalCountryISO;
 
 @end
 

@@ -10,20 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// view transform to image
+// Captured in app, Maybe without considering the Pixels
 @interface UIImage (Capture)
 
-/**
-代码截图
-@param view 支持UIView及其子类
-@param cropRect 裁剪区域
-@return 裁剪完成的图片
-*/
-// Captured in app, Maybe without considering the Pixels
-// view transform to image
+/// 全屏截图
++ (UIImage *)captureScreen;
+
+/// 代码截图
+/// @param view 支持UIView及其子类
+/// @param cropRect 裁剪区域
 + (UIImage *)capture:(id)view cropRect:(CGRect)cropRect;
 + (UIImage *)captureView:(UIView *)view;
 + (UIImage *)captureScrollView:(UIScrollView *)scrollView;
 + (UIImage *)captureTableView:(UITableView *)tableView;
+
 
 @end
 

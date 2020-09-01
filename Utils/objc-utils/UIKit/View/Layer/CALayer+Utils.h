@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
                                              frame:(CGRect)frame;
 
 
+/** 添加边缘虚线 */
 - (CAShapeLayer *)addDashLineBorderWidth:(CGFloat)borderWidth
                              borderColor:(UIColor *)borderColor
                              dashPattren:(CGFloat)dashPattern

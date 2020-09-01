@@ -10,20 +10,20 @@
 
 @implementation UIViewController (CurrentVC)
 
-+ (UIViewController *)topViewController {
-    UIViewController *resultVC;
-    resultVC = [UIViewController _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
-    while (resultVC.presentedViewController) {
-        resultVC = [UIViewController _topViewController:resultVC.presentedViewController];
++ (UIViewController *)getCurrentVC {
+    UIViewController *targetVC;
+    targetVC = [UIViewController findCurrentVC:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (targetVC.presentedViewController) {
+        targetVC = [UIViewController findCurrentVC:targetVC.presentedViewController];
     }
-    return resultVC;
+    return targetVC;
 }
 
-+ (UIViewController *)_topViewController:(UIViewController *)vc {
++ (UIViewController *)findCurrentVC:(UIViewController *)vc {
     if ([vc isKindOfClass:[UINavigationController class]]) {
-        return [UIViewController _topViewController:[(UINavigationController *)vc topViewController]];
+        return [UIViewController findCurrentVC:[(UINavigationController *)vc topViewController]];
     } else if ([vc isKindOfClass:[UITabBarController class]]) {
-        return [UIViewController _topViewController:[(UITabBarController *)vc selectedViewController]];
+        return [UIViewController findCurrentVC:[(UITabBarController *)vc selectedViewController]];
     } else {
         return vc;
     }

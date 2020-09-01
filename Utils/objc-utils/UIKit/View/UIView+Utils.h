@@ -32,6 +32,20 @@ NS_ASSUME_NONNULL_BEGIN
 // view transform to image
 - (UIImage *)transformToImage;
 
+/// 创建一张实时模糊效果 View (毛玻璃效果)
+/// @param frame frame
++ (UIVisualEffectView *)effectViewWithFrame:(CGRect)frame;
+
+/// 绘制虚线
+/// @param lineFrame 虚线的 frame
+/// @param length 虚线中短线的宽度
+/// @param spacing 虚线中短线之间的间距
+/// @param color 虚线中短线的颜色
++ (UIView *)createDashedLineWithFrame:(CGRect)lineFrame
+                           lineLength:(int)length
+                          lineSpacing:(int)spacing
+                            lineColor:(UIColor *)color;
+
 @end
 
 NS_ASSUME_NONNULL_END

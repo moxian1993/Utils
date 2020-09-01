@@ -8,8 +8,6 @@
 
 #import "NetworkUtils.h"
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import <CoreTelephony/CTCarrier.h>
-
 #import <YYReachability.h>
 
 @implementation NetworkUtils
@@ -64,23 +62,6 @@
     return NO;
 }
 
-
-/**
- 获取Publick IP
-
- @return public IP
- */
-+ (NSString *)getPublicIP {
-
-    NSError *error;
-    NSURL *ipURL = [NSURL URLWithString:@"http://whatismyip.akamai.com"];
-    NSString *strIP = [NSString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
-    NSLog(@"getPublicIP: %@", strIP);
-    if(error)
-        return @"116.231.249.166"; //上海电信IP地址
-    else
-        return strIP;
-}
 
 
 /**
@@ -149,38 +130,6 @@
             break;
     }
     return netconnType;
-}
-
-
-+ (NSString *)getPhoneNetworkCarrierName {
-
-    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
-    CTCarrier *carrier = networkInfo.subscriberCellularProvider;
-    NSString *simOperator = carrier.carrierName;
-    
-    return simOperator;
-}
-
-
-+ (NSString *)getCountryISO {
-    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
-    CTCarrier *carrier = networkInfo.subscriberCellularProvider;
-    
-    NSString *countryIso = carrier.isoCountryCode;
-    NSString *simOperator = carrier.carrierName;
-    NSString *networkOperator = carrier.mobileNetworkCode;
-    
-    if(!countryIso) {
-        countryIso = [self getLocalCountryISO];
-    }
-    return countryIso;
-}
-
-
-+ (NSString *)getLocalCountryISO {
-    NSLocale *locale = [NSLocale currentLocale];
-    NSString *countryIso = [locale objectForKey:NSLocaleCountryCode];
-    return countryIso;
 }
 
 

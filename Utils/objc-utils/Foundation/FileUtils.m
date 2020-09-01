@@ -67,4 +67,72 @@
 }
 
 
+/**
+ 获取磁盘总空间的大小
+ @return disk size
+ */
++ (CGFloat)diskOfAllSizeMBytes {
+    CGFloat size = 0.0;
+    NSError *error;
+    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error != nil) {
+        NSLog(@"error: %@", error.localizedDescription);
+    }else{
+        NSNumber *number = [dic objectForKey:NSFileSystemSize];
+        size = [number floatValue]/1024/1024;
+    }
+    return size;
+}
+
+
+/**
+ 获取磁盘可用空间大小
+ @return disk of free size
+ */
++ (CGFloat)diskOfFreeSizeMBytes {
+    CGFloat size = 0.0;
+    NSError *error;
+    NSDictionary *dic = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:&error];
+    if (error) {
+        NSLog(@"error: %@", error.localizedDescription);
+    }else{
+        NSNumber *number = [dic objectForKey:NSFileSystemFreeSize];
+        size = [number floatValue]/1024/1024;
+    }
+    return size;
+}
+
+
+
+/**
+ 获取指定路径下某个文件的大小
+ @param filePath filePath
+ @return file size
+ */
++ (long long)fileSizeAtPath:(NSString *)filePath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:filePath]) return 0;
+    return [[fileManager attributesOfItemAtPath:filePath error:nil] fileSize];
+}
+
+
+/**
+ 获取文件夹下所有文件的大小
+ @param folderPath folderPath
+ @return folder size
+ */
++ (long long)folderSizeAtPath:(NSString *)folderPath {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:folderPath]) return 0;
+    NSEnumerator *filesEnumerator = [[fileManager subpathsAtPath:folderPath] objectEnumerator];
+    NSString *fileName;
+    long long folerSize = 0;
+    while ((fileName = [filesEnumerator nextObject]) != nil) {
+        NSString *filePath = [folderPath stringByAppendingPathComponent:fileName];
+        folerSize += [self fileSizeAtPath:filePath];
+    }
+    return folerSize;
+}
+
+
 @end

@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, kCoppingType) {
-    kCoppingTypeTopLeft,
-    kCoppingTypeTopCenter,
-};
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Utils)
+
+/// 图片切圆角
+/// @param radius 角度
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius;
+
 
 /// resize
 /// @param size size
@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
                  fillColor:(UIColor *)fillColor;
 
 
-/// imageWithData
+/// 按尺寸绘制一个二进制图片
 /// @param data data
 /// @param size size
 + (UIImage *)imageWithData:(NSData *)data size:(CGSize)size;
@@ -56,6 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 图片方向旋转
 /// @param orientation orientation
 - (UIImage *)imageRotation:(UIImageOrientation)orientation;
+
+
+/// 判断图片格式
+/// @param data image data
++ (NSString *)typeForImageData:(NSData *)data;
 
 @end
 

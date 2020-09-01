@@ -45,6 +45,36 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSURL *)URLWithName:(NSString *)resourceName type:(NSString *)type bunleName:(NSString * __nullable)bundleName;
 
 
+/**
+ 获取磁盘总空间的大小
+ @return disk size
+ */
++ (CGFloat)diskOfAllSizeMBytes;
+
+
+/**
+ 获取磁盘可用空间大小
+ @return disk of free size
+ */
++ (CGFloat)diskOfFreeSizeMBytes;
+
+
+/**
+ 获取指定路径下某个文件的大小
+ @param filePath filePath
+ @return file size
+ */
++ (long long)fileSizeAtPath:(NSString *)filePath;
+
+
+/**
+ 获取文件夹下所有文件的大小
+ @param folderPath folderPath
+ @return folder size
+ */
++ (long long)folderSizeAtPath:(NSString *)folderPath;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

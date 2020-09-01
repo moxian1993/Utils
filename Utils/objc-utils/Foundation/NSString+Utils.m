@@ -10,6 +10,9 @@
 
 @implementation NSString (Utils)
 
+#pragma mark -
+#pragma mark - judge
+
 - (BOOL)utils_isEmpty {
     if ([self isKindOfClass:[NSNull class]] ||
         self == nil ||
@@ -33,6 +36,112 @@
     return NO;
 }
 
+
+/** 判断字符串是否全部为数字 */
+- (BOOL)utils_isAllNum {
+    unichar c;
+    for (int i = 0; i < self.length; i++) {
+        c = [self characterAtIndex:i];
+        if (!isdigit(c)) {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+/** 判断是否仅有空格和换行符 */
+- (BOOL)utils_isBlank; {
+    if([[self utils_trim] isEqualToString:@""])
+        return YES;
+    return NO;
+}
+
+
+#pragma mark -
+#pragma mark - convert
+/** 字符串反转1 */
+- (NSString *)utils_reverseWords {
+    NSMutableString *newString = [[NSMutableString alloc] initWithCapacity:self.length];
+    for (NSInteger i = self.length - 1; i >= 0 ; i --)
+    {
+        unichar ch = [self characterAtIndex:i];
+        [newString appendFormat:@"%c", ch];
+    }
+    return newString;
+}
+
+
+/** 字符串反转2 */
+- (NSString *)utils_reverseWholeString {
+    NSMutableString *reverString = [NSMutableString stringWithCapacity:self.length];
+    [self enumerateSubstringsInRange:NSMakeRange(0, self.length) options:NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+        [reverString appendString:substring];
+    }];
+    return reverString;
+}
+
+
+/// 替换字符串中部分文本
+/// @param replacedPart 被替换部分
+/// @param replacement 替换为
+- (NSString *)utils_replace:(NSString *)replacedPart with:(NSString *)replacement {
+    if (!replacement) {
+        return self;
+    }
+    return [self stringByReplacingOccurrencesOfString:replacedPart withString: replacement];
+}
+
+/// 用指定字符串替换第一个匹配字符串
+/// @param replacedPart replaced string
+/// @param replacement replacement
+- (NSString *)utils_replaceFirstPart:(NSString *)replacedPart with:(NSString *)replacement {
+    if (!replacement) {
+        return self;
+    }
+    NSRange replacedRange = [self rangeOfString: replacedPart];
+    NSString *result;
+    if (replacedRange.location != NSNotFound) {
+        result = [self stringByReplacingCharactersInRange: replacedRange withString:replacement];
+    }
+    return result;
+}
+
+/// 替换字符串中部分文本(array)
+/// @param replacedParts 被替换部分(array)
+/// @param replacements 替换为(array)
+- (NSString *)utils_replaceParts:(NSArray <NSString *> *)replacedParts withParts:(NSArray <NSString *> *)replacements {
+    NSUInteger count = replacedParts.count;
+    NSAssert(count != replacements.count, @"two arrays can't match each other");
+    
+    NSString *temp = self;
+    for (int i = 0; i < count; i++) {
+        temp = [self utils_replace:replacedParts[i] with:replacements[i]];
+    }
+    return temp;
+}
+
+
+/// 清除字符串中的部分文本
+/// @param strings 需要清除的字符串集合
+- (NSString *)utils_cleaner:(NSArray <NSString *> *)strings {
+    NSUInteger count = strings.count;
+    if (count == 0) {
+        return self;
+    }
+    
+    NSString *temp = self;
+    for (NSString *string in strings) {
+        temp = [self utils_replace:string with:@""];
+    }
+    return temp;
+}
+
+
+
+
+#pragma mark -
+#pragma mark - trim
+
 - (NSString *)utils_trim {
     if ([self utils_isEmpty]) {
         return @"";
@@ -40,6 +149,9 @@
         return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
+
+#pragma mark -
+#pragma mark - substring
 
 - (NSInteger)utils_indexOfString:(NSString *)str {
     return [self utils_indexOfString:str options:NSCaseInsensitiveSearch];
@@ -135,6 +247,8 @@
 }
 
 
+#pragma mark -
+#pragma mark - jsonStr
 - (NSDictionary *)utils_jsonStrTurnDictionary {
     if ([self utils_isEqualTo:self]) {
         return nil;
@@ -148,7 +262,8 @@
 }
 
 
-
+#pragma mark -
+#pragma mark - safety
 + (NSString *)safecheck:(id)origin defaultString:(NSString *)string {
     if ([origin respondsToSelector:@selector(length)]) {
         NSString *s = origin;

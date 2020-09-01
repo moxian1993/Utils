@@ -12,7 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (CurrentVC)
 
-+ (UIViewController *)topViewController;
+/**
+ 获取当前实现的ViewController(非navVC、tabBarVC)
+ 
+ @return currentVC
+ */
++ (UIViewController *)getCurrentVC;
 
 @end
 

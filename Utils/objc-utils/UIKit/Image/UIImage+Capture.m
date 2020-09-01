@@ -10,6 +10,17 @@
 
 @implementation UIImage (Capture)
 
+/// 全屏截图
++ (UIImage *)captureScreen {
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIGraphicsBeginImageContextWithOptions(window.bounds.size, NO, [UIScreen mainScreen].scale);
+    [window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
 + (UIImage *)capture:(id)view cropRect:(CGRect)cropRect {
     UIImage *image = nil;
     /* 转换成完整图片 */
