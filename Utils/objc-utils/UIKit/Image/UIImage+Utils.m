@@ -10,30 +10,6 @@
 
 @implementation UIImage (Utils)
 
-/// 图片切圆角
-/// @param radius 角度
-- (UIImage *)imageWithCornerRadius:(CGFloat)radius {
-    
-    CGRect rect = (CGRect){0.f, 0.f, self.size};
-    //1, 开启图形上下文
-    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-    //2, 获取图形上下文
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    //4, 创建路径
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
-    //5, 添加路径
-    CGContextAddPath(ctx, path.CGPath);
-    //6, 裁减
-    CGContextClip(ctx);
-    [self drawInRect:rect];
-    //7, 获取最终图片
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    //3, 关闭上下文
-    UIGraphicsEndImageContext();
-    return image;
-}
-
-
 - (UIImage *)resize:(CGSize)size {
     if (CGSizeEqualToSize(self.size, size)) return self;
     
@@ -68,7 +44,7 @@
             imageHeight = self.size.height;
         }
     }
-
+    
     CGSize targetSize = CGSizeMake(imageWidth, imageHeight);
     UIGraphicsBeginImageContextWithOptions(targetSize, NO, [UIScreen mainScreen].scale);
     [self drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
@@ -83,17 +59,17 @@
     CGSize imageSize = sourceImage.size;
     CGFloat width = imageSize.width;
     CGFloat height = imageSize.height;
-
+    
     UIImage *newImage = nil;
     CGFloat targetWidth = size.width;
     CGFloat targetHeight = size.height;
-
+    
     CGFloat scaleFactor = 0.0;
     CGFloat scaledWidth = targetWidth;
     CGFloat scaledHeight = targetHeight;
-
+    
     CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
-
+    
     if (CGSizeEqualToSize(imageSize, size) == NO) {
         CGFloat widthFactor = targetWidth / width;
         CGFloat heightFactor = targetHeight / height;
@@ -110,7 +86,7 @@
             thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
         }
     }
-
+    
     // this is actually the interesting part:
     CGSize targetSize = CGSizeMake(scaledWidth, scaledHeight);
     UIGraphicsBeginImageContext(targetSize);
@@ -165,13 +141,13 @@
     
     CGRect rcTextRect = CGRectMake((targetSize.width - sizeTextCanDraw.width) / 2,
                                    (targetSize.height - sizeTextCanDraw.height) / 2,
-                                    sizeTextCanDraw.width,
+                                   sizeTextCanDraw.width,
                                    sizeTextCanDraw.height);
-
+    
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [text drawInRect:rcTextRect withAttributes:@{NSFontAttributeName :font,
-                                                NSParagraphStyleAttributeName:paragraphStyle,
-                                                NSForegroundColorAttributeName: color}];
+                                                 NSParagraphStyleAttributeName:paragraphStyle,
+                                                 NSForegroundColorAttributeName: color}];
     
     // 从当前context中创建一个改变大小后的图片
     returnImg = UIGraphicsGetImageFromCurrentImageContext();
@@ -249,7 +225,7 @@
     float translateY = 0;
     float scaleX = 1.0;
     float scaleY = 1.0;
-
+    
     switch (orientation) {
         case UIImageOrientationLeft:
             rotate = M_PI_2;
@@ -280,7 +256,7 @@
             translateY = 0;
             break;
     }
-
+    
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     //做CTM变换
@@ -288,14 +264,14 @@
     CGContextScaleCTM(context, 1.0, -1.0);
     CGContextRotateCTM(context, rotate);
     CGContextTranslateCTM(context, translateX, translateY);
-
+    
     CGContextScaleCTM(context, scaleX, scaleY);
     //绘制图片
     CGContextDrawImage(context, CGRectMake(0, 0, rect.size.width, rect.size.height), self.CGImage);
-
+    
     UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
+    
     return newPic;
 }
 
@@ -327,6 +303,140 @@
             return nil;
     }
     return nil;
+}
+
+/// image 转 data
+- (NSData *)getImageData {
+    NSData *imageData;
+    //png
+    if (UIImagePNGRepresentation(self) != nil) {
+        imageData = UIImagePNGRepresentation(self);
+    }else {
+        //jpeg
+        imageData = UIImageJPEGRepresentation(self, 1.0);
+    }
+    return imageData;
+}
+
+
+/// 图片切圆角
+/// @param radius 角度
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius {
+    
+    CGRect rect = (CGRect){0.f, 0.f, self.size};
+    //1, 开启图形上下文
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    //2, 获取图形上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //4, 创建路径
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius];
+    //5, 添加路径
+    CGContextAddPath(ctx, path.CGPath);
+    //6, 裁减
+    CGContextClip(ctx);
+    [self drawInRect:rect];
+    //7, 获取最终图片
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    //3, 关闭上下文
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+
+/// 绘制圆形图片
+/// @param icon 源图片
+/// @param imageSize 目标尺寸
+/// @param fillColor 填充色
+/// @param borderColor 边框颜色
+/// @param borderWidth 边框宽度
++ (UIImage *)circleImageWithIcon:(UIImage *)icon
+                       imageSize:(CGSize)imageSize
+                       fillColor:(UIColor *)fillColor
+                     borderColor:(UIColor *)borderColor
+                     borderWidth:(float)borderWidth {
+    int w = imageSize.width * [UIScreen mainScreen].scale;
+    int h = imageSize.height * [UIScreen mainScreen].scale;
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef context = CGBitmapContextCreate(NULL, w, h, 8, 4 * w, colorSpace, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedLast);
+    
+    //绘制圆形正文
+    CGContextBeginPath(context);
+    if(fillColor) {
+        CGContextSetFillColorWithColor(context, fillColor.CGColor);
+    }
+    if(borderColor) {
+        CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
+    }
+    if(borderWidth > 0) {
+        CGContextSetLineWidth(context, borderWidth * [UIScreen mainScreen].scale);
+    }
+    
+    CGContextAddArc(context, w / 2, h / 2, (w - borderWidth * 2) / 2, 0, 360, 0);
+    
+    if(borderWidth > 0) {
+        CGContextDrawPath(context, kCGPathFillStroke);
+        CGContextSetLineWidth(context, borderWidth);
+    } else {
+        CGContextDrawPath(context, kCGPathFill);
+    }
+    CGContextDrawPath(context, kCGPathFill);
+    
+    //绘制icon
+    if(icon) {
+        CGImageRef iconRef = icon.CGImage;
+        float iconWidth = CGImageGetWidth(iconRef);
+        float iconHeight = CGImageGetHeight(iconRef);
+        CGContextDrawImage(context, CGRectMake((w - iconWidth) / 2, (h - iconHeight) / 2, iconWidth, iconHeight), iconRef);
+    }
+    
+    CGImageRef imageRef = CGBitmapContextCreateImage(context);
+    UIImage* img = [UIImage imageWithCGImage:imageRef scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    
+    CGImageRelease(imageRef);
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    return img;
+}
+
+
+/// 生成角标图片
+/// @param borderWidth 边框宽度
+/// @param borderColor 边框颜色
+/// @param icon 角标图标
+/// @param direction 角标所处位置
+- (UIImage *)cornerIconImageWithBorderWidth:(float)borderWidth
+                                borderColor:(UIColor *)borderColor
+                                 cornerIcon:(UIImage *)icon
+                        cornerIconDirection:(UIImageCornerIconDirection)direction {
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [[UIScreen mainScreen] scale]);
+    CGContextRef effectInContext = UIGraphicsGetCurrentContext();
+    CGContextScaleCTM(effectInContext, 1.0, -1.0);
+    CGContextTranslateCTM(effectInContext, 0, -self.size.height);
+    CGContextDrawImage(effectInContext, CGRectMake(0, 0, self.size.width, self.size.height), self.CGImage);
+    CGContextSetStrokeColorWithColor(effectInContext, borderColor.CGColor);
+    CGContextSetLineWidth(effectInContext, borderWidth);
+    
+    CGContextMoveToPoint(effectInContext, self.size.width, self.size.width - borderWidth);
+    
+    
+    //    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+    
+    //    UIRectFill(bounds);
+    
+    //Draw the tinted image in context
+    //    [self drawInRect:bounds blendMode:blendMode alpha:1.0f];
+    
+    //    if (blendMode != kCGBlendModeDestinationIn) {
+    //        [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+    //    }
+    
+    
+    
+    UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return outImage;
 }
 
 

@@ -8,6 +8,29 @@
 
 #import "FileUtils.h"
 
+@implementation NSString (Path)
+
+- (NSString *)utils_appendDocumentDir {
+    NSString *dir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    
+    return [dir stringByAppendingPathComponent:self.lastPathComponent];
+}
+
+- (NSString *)utils_appendCacheDir {
+    NSString *dir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+    
+    return [dir stringByAppendingPathComponent:self.lastPathComponent];
+}
+
+- (NSString *)utils_appendTempDir {
+    NSString *dir = NSTemporaryDirectory();
+    
+    return [dir stringByAppendingPathComponent:self.lastPathComponent];
+}
+
+@end
+
+
 @implementation FileUtils
 
 /**

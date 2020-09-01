@@ -12,10 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (RuntimeUtils)
 
-//得到所有的方法名,所有的实例变量,所有的协议名称
-+ (NSArray <NSString *>*)getPropertyNameList;
-+ (NSArray <NSString *>*)getProtocalNameList;
-+ (NSArray <NSString *>*)getMethodNameList;
+/// 返回当前类的属性类别
++ (NSArray <NSString *>*)propertyList;
+
+/// 返回当前类的协议列表
++ (NSArray <NSString *>*)protocalList;
+
+/// 返回当前类的方法列表
++ (NSArray <NSString *>*)methodList;
+
+/// 返回当前类的成员变量
++ (NSArray *)ivarsList;
 
 @end
 

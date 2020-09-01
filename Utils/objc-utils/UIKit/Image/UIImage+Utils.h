@@ -10,12 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, UIImageCornerIconDirection) {
+    UIImageCornerIconDirectionUpRight,
+    UIImageCornerIconDirectionUpLeft,
+    UIImageCornerIconDirectionDownRight,
+    UIImageCornerIconDirectionDownLeft
+};
+
 @interface UIImage (Utils)
-
-/// 图片切圆角
-/// @param radius 角度
-- (UIImage *)imageWithCornerRadius:(CGFloat)radius;
-
 
 /// resize
 /// @param size size
@@ -61,6 +63,36 @@ NS_ASSUME_NONNULL_BEGIN
 /// 判断图片格式
 /// @param data image data
 + (NSString *)typeForImageData:(NSData *)data;
+
+/// image 转 data
+- (NSData *)getImageData;
+
+
+/// 图片切圆角
+/// @param radius 角度
+- (UIImage *)imageWithCornerRadius:(CGFloat)radius;
+
+/// 绘制圆形图片
+/// @param icon 源图片
+/// @param imageSize 目标尺寸
+/// @param fillColor 填充色
+/// @param borderColor 边框颜色
+/// @param borderWidth 边框宽度
++ (UIImage *)circleImageWithIcon:(UIImage *)icon
+                       imageSize:(CGSize)imageSize
+                       fillColor:(UIColor *)fillColor
+                     borderColor:(UIColor *)borderColor
+                     borderWidth:(float)borderWidth;
+
+/// 生成角标图片
+/// @param borderWidth 边框宽度
+/// @param borderColor 边框颜色
+/// @param icon 角标图标
+/// @param direction 角标所处位置
+- (UIImage *)cornerIconImageWithBorderWidth:(float)borderWidth
+                                borderColor:(UIColor *)borderColor
+                                 cornerIcon:(UIImage *)icon
+                        cornerIconDirection:(UIImageCornerIconDirection)direction;
 
 @end
 

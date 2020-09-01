@@ -61,7 +61,6 @@
 		CDAEFAF224FD6BE900362E84 /* UIImage+Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFAF124FD6BE900362E84 /* UIImage+Capture.m */; };
 		CDAEFAF524FD70B400362E84 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFAF424FD70B400362E84 /* UIImage+Blur.m */; };
 		CDAEFAF824FD793E00362E84 /* UIView+Quartz2D.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFAF724FD793E00362E84 /* UIView+Quartz2D.m */; };
-		CDAEFAFB24FD832800362E84 /* UIView+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFAFA24FD832800362E84 /* UIView+Transform.m */; };
 		CDAEFAFE24FD846B00362E84 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFAFD24FD846B00362E84 /* UIView+Utils.m */; };
 		CDAEFB0124FD878500362E84 /* CALayer+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB0024FD878500362E84 /* CALayer+Utils.m */; };
 		CDAEFB0424FE186000362E84 /* EOCAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB0224FE185F00362E84 /* EOCAutoDictionary.m */; };
@@ -78,7 +77,11 @@
 		CDAEFB2424FE96B700362E84 /* NumberFormatterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2224FE96B600362E84 /* NumberFormatterUtils.m */; };
 		CDAEFB2724FE97EB00362E84 /* CameraUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2624FE97EB00362E84 /* CameraUtils.m */; };
 		CDAEFB2A24FE981800362E84 /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2924FE981800362E84 /* UserDefaultsManager.m */; };
-		CDAEFB2F24FE99CC00362E84 /* GlobalDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */; };
+		CDAEFB3224FEA16900362E84 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB3124FEA16900362E84 /* NSArray+Log.m */; };
+		CDAEFB5324FEA81200362E84 /* PhoneInfoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB5124FEA81200362E84 /* PhoneInfoUtils.m */; };
+		CDAEFB5424FEA81200362E84 /* UIDevice+TSHardwareVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB5224FEA81200362E84 /* UIDevice+TSHardwareVersion.m */; };
+		CDAEFB8124FEA95900362E84 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB6D24FEA95900362E84 /* UICountingLabel.m */; };
+		CDAEFB8424FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAEFB7524FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m */; };
 		EBACE6848DBB9ADC734F76C4 /* Pods_Utils_UtilsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D15662AC6D3753E670ACD66 /* Pods_Utils_UtilsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,8 +216,6 @@
 		CDAEFAF424FD70B400362E84 /* UIImage+Blur.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		CDAEFAF624FD793E00362E84 /* UIView+Quartz2D.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Quartz2D.h"; sourceTree = "<group>"; };
 		CDAEFAF724FD793E00362E84 /* UIView+Quartz2D.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Quartz2D.m"; sourceTree = "<group>"; };
-		CDAEFAF924FD832800362E84 /* UIView+Transform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Transform.h"; sourceTree = "<group>"; };
-		CDAEFAFA24FD832800362E84 /* UIView+Transform.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Transform.m"; sourceTree = "<group>"; };
 		CDAEFAFC24FD846B00362E84 /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		CDAEFAFD24FD846B00362E84 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
 		CDAEFAFF24FD878500362E84 /* CALayer+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+Utils.h"; sourceTree = "<group>"; };
@@ -245,8 +246,16 @@
 		CDAEFB2624FE97EB00362E84 /* CameraUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraUtils.m; sourceTree = "<group>"; };
 		CDAEFB2824FE981800362E84 /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
 		CDAEFB2924FE981800362E84 /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
-		CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDefine.swift; sourceTree = "<group>"; };
-		CDAEFB2E24FE99CC00362E84 /* Utils-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Utils-Bridging-Header.h"; sourceTree = "<group>"; };
+		CDAEFB3024FEA16900362E84 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		CDAEFB3124FEA16900362E84 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		CDAEFB4F24FEA81100362E84 /* UIDevice+TSHardwareVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TSHardwareVersion.h"; sourceTree = "<group>"; };
+		CDAEFB5024FEA81200362E84 /* PhoneInfoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneInfoUtils.h; sourceTree = "<group>"; };
+		CDAEFB5124FEA81200362E84 /* PhoneInfoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneInfoUtils.m; sourceTree = "<group>"; };
+		CDAEFB5224FEA81200362E84 /* UIDevice+TSHardwareVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TSHardwareVersion.m"; sourceTree = "<group>"; };
+		CDAEFB6C24FEA95900362E84 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		CDAEFB6D24FEA95900362E84 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		CDAEFB7524FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullScreenPopGesture.m"; sourceTree = "<group>"; };
+		CDAEFB7624FEA95900362E84 /* UINavigationController+FullScreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FullScreenPopGesture.h"; sourceTree = "<group>"; };
 		E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils-UtilsUITests.release.xcconfig"; path = "Target Support Files/Pods-Utils-UtilsUITests/Pods-Utils-UtilsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,7 +343,6 @@
 				CDAEFB0624FE1BF500362E84 /* fly1.gif */,
 				CDAEFB0524FE1BF500362E84 /* fly2.gif */,
 				CDAB0C5924EEE35200C2EA3D /* objc-utils */,
-				CDAEFB2B24FE99CC00362E84 /* swift-utils */,
 				CDA64E3C1ED9784800BE2EEA /* Supporting Files */,
 			);
 			path = Utils;
@@ -399,12 +407,12 @@
 		CDAB0C5B24EEE35200C2EA3D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CDAEFA4824F7C7A100362E84 /* PrefixHeader.pch */,
 				CDAEFA4624F7C64200362E84 /* ClassFactory.h */,
 				CDAEFA4524F7C64200362E84 /* ClassFactory.m */,
 				CDAEFA3824F7C4D400362E84 /* ZWSingleton.h */,
 				CDAB0C7524EEF0CF00C2EA3D /* UtilsPrivate.h */,
 				CDAB0C7624EEF0CF00C2EA3D /* UtilsPrivate.m */,
-				CDAEFA4824F7C7A100362E84 /* PrefixHeader.pch */,
 				CDAEFA8E24FA6CD500362E84 /* ThemeManager.h */,
 				CDAEFA8F24FA6CD500362E84 /* ThemeManager.m */,
 				CDAEFB2824FE981800362E84 /* UserDefaultsManager.h */,
@@ -462,6 +470,8 @@
 				CDAEFB0924FE87D900362E84 /* MatchUtils.m */,
 				CDAEFAA024FC050A00362E84 /* HanziUtils.h */,
 				CDAEFAA124FC050A00362E84 /* HanziUtils.m */,
+				CDAEFB3024FEA16900362E84 /* NSArray+Log.h */,
+				CDAEFB3124FEA16900362E84 /* NSArray+Log.m */,
 				CDAEFA9A24FC021100362E84 /* NSArray+ArrayUtils.h */,
 				CDAEFA9B24FC021100362E84 /* NSArray+ArrayUtils.m */,
 			);
@@ -471,6 +481,8 @@
 		CDAEFA3424F7C45800362E84 /* Label */ = {
 			isa = PBXGroup;
 			children = (
+				CDAEFB6C24FEA95900362E84 /* UICountingLabel.h */,
+				CDAEFB6D24FEA95900362E84 /* UICountingLabel.m */,
 				CDAEFA3624F7C45800362E84 /* MOLrcBlendLabel.h */,
 				CDAEFA3524F7C45800362E84 /* MOLrcBlendLabel.m */,
 				CDAEFA5524F7FA6800362E84 /* MORollingView.h */,
@@ -486,14 +498,12 @@
 				CDAEFAEE24FD697A00362E84 /* UIImage+Color.m */,
 				CDAEFA5F24F82FC900362E84 /* UIImage+Utils.h */,
 				CDAEFA6024F82FC900362E84 /* UIImage+Utils.m */,
-				CDAEFAF924FD832800362E84 /* UIView+Transform.h */,
-				CDAEFAFA24FD832800362E84 /* UIView+Transform.m */,
 				CDAEFAF024FD6BE900362E84 /* UIImage+Capture.h */,
 				CDAEFAF124FD6BE900362E84 /* UIImage+Capture.m */,
-				CDAEFAF324FD70B400362E84 /* UIImage+Blur.h */,
-				CDAEFAF424FD70B400362E84 /* UIImage+Blur.m */,
 				CDAEFB0D24FE8BBF00362E84 /* UIImage+Effect.h */,
 				CDAEFB0C24FE8BBF00362E84 /* UIImage+Effect.m */,
+				CDAEFAF324FD70B400362E84 /* UIImage+Blur.h */,
+				CDAEFAF424FD70B400362E84 /* UIImage+Blur.m */,
 				CDAEFB0F24FE8D7C00362E84 /* UIImage+Zip.h */,
 				CDAEFB1024FE8D7C00362E84 /* UIImage+Zip.m */,
 				CDAEFAAE24FC0D7E00362E84 /* UIImageView+FitSize.h */,
@@ -530,6 +540,8 @@
 				CDAEFA4124F7C5FD00362E84 /* Layer */,
 				CDAEFAFC24FD846B00362E84 /* UIView+Utils.h */,
 				CDAEFAFD24FD846B00362E84 /* UIView+Utils.m */,
+				CDAEFB7524FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m */,
+				CDAEFB7624FEA95900362E84 /* UINavigationController+FullScreenPopGesture.h */,
 				CDAEFAF624FD793E00362E84 /* UIView+Quartz2D.h */,
 				CDAEFAF724FD793E00362E84 /* UIView+Quartz2D.m */,
 				CDAEFA6324F9362C00362E84 /* UIViewController+CurrentVC.h */,
@@ -580,6 +592,7 @@
 				CDAEFB1824FE955000362E84 /* Authority */,
 				CDAEFA6D24F96C6800362E84 /* Network */,
 				CDAEFADC24FCD8E300362E84 /* QRCode */,
+				CDAEFB3324FEA47900362E84 /* Device */,
 				CDAEFA7F24FA3BA200362E84 /* MOAudioServiceTools.h */,
 				CDAEFA8124FA3BA200362E84 /* MOAudioServiceTools.m */,
 				CDAEFA8024FA3BA200362E84 /* MOImageDetectUtils.h */,
@@ -625,21 +638,15 @@
 			path = Authority;
 			sourceTree = "<group>";
 		};
-		CDAEFB2B24FE99CC00362E84 /* swift-utils */ = {
+		CDAEFB3324FEA47900362E84 /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				CDAEFB2C24FE99CC00362E84 /* Common */,
+				CDAEFB5024FEA81200362E84 /* PhoneInfoUtils.h */,
+				CDAEFB5124FEA81200362E84 /* PhoneInfoUtils.m */,
+				CDAEFB4F24FEA81100362E84 /* UIDevice+TSHardwareVersion.h */,
+				CDAEFB5224FEA81200362E84 /* UIDevice+TSHardwareVersion.m */,
 			);
-			path = "swift-utils";
-			sourceTree = "<group>";
-		};
-		CDAEFB2C24FE99CC00362E84 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				CDAEFB2D24FE99CC00362E84 /* GlobalDefine.swift */,
-				CDAEFB2E24FE99CC00362E84 /* Utils-Bridging-Header.h */,
-			);
-			path = Common;
+			path = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -913,7 +920,7 @@
 			files = (
 				CDAEFA8424FA3BA300362E84 /* MOAudioServiceTools.m in Sources */,
 				CDAEFB0B24FE87DA00362E84 /* MatchUtils.m in Sources */,
-				CDAEFAFB24FD832800362E84 /* UIView+Transform.m in Sources */,
+				CDAEFB5324FEA81200362E84 /* PhoneInfoUtils.m in Sources */,
 				CDAEFB1B24FE95B900362E84 /* AlertUtils.m in Sources */,
 				CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */,
 				CDAEFA9024FA6CD500362E84 /* ThemeManager.m in Sources */,
@@ -932,10 +939,11 @@
 				CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */,
 				CDAEFA4724F7C64200362E84 /* ClassFactory.m in Sources */,
 				CDAEFA9624FA9BA800362E84 /* MKCustomDeleteStyleTableView.m in Sources */,
+				CDAEFB3224FEA16900362E84 /* NSArray+Log.m in Sources */,
+				CDAEFB8424FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				CDAEFA8A24FA506800362E84 /* TimeUtils.m in Sources */,
 				CDAEFA8724FA432B00362E84 /* FileUtils.m in Sources */,
 				CDAEFA6124F82FC900362E84 /* UIImage+Utils.m in Sources */,
-				CDAEFB2F24FE99CC00362E84 /* GlobalDefine.swift in Sources */,
 				CDAEFAD724FC2F7900362E84 /* XFUserRightsHelper.m in Sources */,
 				CDAEFAEF24FD697A00362E84 /* UIImage+Color.m in Sources */,
 				CDAEFAF524FD70B400362E84 /* UIImage+Blur.m in Sources */,
@@ -947,7 +955,9 @@
 				CDAEFAE224FCE78100362E84 /* MOCodeScannerManager.m in Sources */,
 				CDAEFAB524FC1A2400362E84 /* UIViewController+Cover.m in Sources */,
 				CDAEFAA224FC050A00362E84 /* HanziUtils.m in Sources */,
+				CDAEFB8124FEA95900362E84 /* UICountingLabel.m in Sources */,
 				CDAEFA7A24FA324900362E84 /* NSDate+Convert.m in Sources */,
+				CDAEFB5424FEA81200362E84 /* UIDevice+TSHardwareVersion.m in Sources */,
 				CDAEFB0424FE186000362E84 /* EOCAutoDictionary.m in Sources */,
 				CDAEFAF824FD793E00362E84 /* UIView+Quartz2D.m in Sources */,
 				CDAEFB1124FE8D7C00362E84 /* UIImage+Zip.m in Sources */,
@@ -1150,7 +1160,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D6D89B3C43BCA8C7A36FED6 /* Pods-UtilsTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
@@ -1165,7 +1174,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44DC9065AA931E876006F5EB /* Pods-UtilsTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsTests/Info.plist;
@@ -1180,7 +1188,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E6059347A634390B6425F534 /* Pods-Utils-UtilsUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1194,7 +1201,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FDF61CE217ECE549F3181C66 /* Pods-Utils-UtilsUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = T265XVEUYV;
 				INFOPLIST_FILE = UtilsUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -10,6 +10,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface NSString (Path)
+
+/// 给当前文件追加文档路径
+- (NSString *)utils_appendDocumentDir;
+
+/// 给当前文件追加缓存路径
+- (NSString *)utils_appendCacheDir;
+
+/// 给当前文件追加临时路径
+- (NSString *)utils_appendTempDir;
+@end
+
 @interface FileUtils : NSObject
 
 /**
