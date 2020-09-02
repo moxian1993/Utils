@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param hanzi hanzi
 + (NSString *)hanziToPinyin:(NSString *)hanzi;
 
+/// 获取中文字符串的发音
+/// @param stripDiacritics 是否显示声调
+- (NSString *)zhCNPhoneticWithStripDiacritics:(BOOL)stripDiacritics;
+
 /// 获取字符串(或汉字)首字母
 /// @param string 字符串(或汉字)
 + (NSString *)firstCharacterWithString:(NSString *)string;

@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/** 在 drawRect 内部使用的方法 */
 @interface UIView (Quartz2D)
 
 /**

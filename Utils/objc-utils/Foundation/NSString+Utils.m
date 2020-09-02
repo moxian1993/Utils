@@ -149,6 +149,37 @@
         return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
+/** 首字母大写其他保持不变 */
+- (NSString *)utils_capitalizedOriginalString; {
+    NSMutableString* str = [NSMutableString string];
+    if(self.length == 0) {
+        return str;
+    }
+    for (NSUInteger i = 0; i < self.length; i ++) {
+        if(i == 0) {
+            NSString *capitalizedChar = [[self substringToIndex:1] uppercaseString];
+            [str appendString:capitalizedChar];
+        } else {
+            [str appendFormat:@"%c",[self characterAtIndex:i]];
+        }
+    }
+    return str;
+}
+
+/** 只转换ascii码的大小写 */
+- (NSString *)utils_lowerLetterString {
+    NSMutableString *newStr = [NSMutableString string];
+    for (NSInteger i = 0; i < self.length; i ++) {
+        unichar ch = [self characterAtIndex:i];
+        if(ch >= 'A' && ch <= 'Z') {
+            [newStr appendFormat:@"%c",ch + ('a' - 'A')];
+        } else {
+            
+            [newStr appendString:[NSString stringWithCharacters:&ch length:1]];
+        }
+    }
+    return newStr;
+}
 
 #pragma mark -
 #pragma mark - substring

@@ -17,6 +17,16 @@
     return [mutableString stringByReplacingOccurrencesOfString:@"'" withString:@""];
 }
 
+/// 获取中文字符串的发音
+/// @param stripDiacritics 是否显示声调
+- (NSString *)zhCNPhoneticWithStripDiacritics:(BOOL)stripDiacritics {
+    NSMutableString *source = [self mutableCopy];
+    CFStringTransform((__bridge CFMutableStringRef)source, NULL, kCFStringTransformMandarinLatin, NO);
+    CFStringTransform((__bridge CFMutableStringRef)source, NULL, kCFStringTransformStripDiacritics, stripDiacritics);
+    return source;
+}
+
+
 /// 获取字符串(或汉字)首字母
 /// @param string 字符串(或汉字)
 + (NSString *)firstCharacterWithString:(NSString *)string {
@@ -81,5 +91,6 @@
     NSLog(@"%@",chinese);
     return chinese;
 }
+
 
 @end

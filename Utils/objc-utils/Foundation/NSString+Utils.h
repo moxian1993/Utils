@@ -61,6 +61,10 @@ NS_ASSUME_NONNULL_BEGIN
 /** 去空格 */
 - (NSString *)utils_trim;
 
+/** 首字母大写其他保持不变 */
+- (NSString *)utils_capitalizedOriginalString;
+/** 只转换ascii码的大小写 */
+- (NSString *)utils_lowerLetterString;
 
 #pragma mark -
 #pragma mark - substring
