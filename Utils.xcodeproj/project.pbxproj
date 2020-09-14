@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5E4810C0D8B2B2B5860BE65D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46EB728312F3006D928F1516 /* Pods_Utils.framework */; };
 		AE27AA309CA01FC67378FA71 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51455964F4A681CCCF83677 /* Pods_UtilsTests.framework */; };
+		CD31DA8D250F9DD0005C0725 /* UINavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = CD31DA8C250F9DD0005C0725 /* UINavigationController+Animation.m */; };
+		CD31DA9A250FB2B3005C0725 /* NSArray+LocalizedIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = CD31DA99250FB2B3005C0725 /* NSArray+LocalizedIndex.m */; };
+		CD31DA9D250FC9ED005C0725 /* AppDelegate+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CD31DA9C250FC9ED005C0725 /* AppDelegate+Window.m */; };
 		CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */; };
 		CDA64E3E1ED9784800BE2EEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E3D1ED9784800BE2EEA /* main.m */; };
 		CDA64E411ED9784800BE2EEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E401ED9784800BE2EEA /* AppDelegate.m */; };
@@ -127,6 +130,12 @@
 		4D6D89B3C43BCA8C7A36FED6 /* Pods-UtilsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilsTests/Pods-UtilsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51CB722788B4117391C6527B /* Pods-Utils.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utils.debug.xcconfig"; path = "Target Support Files/Pods-Utils/Pods-Utils.debug.xcconfig"; sourceTree = "<group>"; };
 		A51455964F4A681CCCF83677 /* Pods_UtilsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UtilsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD31DA8B250F9DCF005C0725 /* UINavigationController+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Animation.h"; sourceTree = "<group>"; };
+		CD31DA8C250F9DD0005C0725 /* UINavigationController+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Animation.m"; sourceTree = "<group>"; };
+		CD31DA98250FB2B3005C0725 /* NSArray+LocalizedIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+LocalizedIndex.h"; sourceTree = "<group>"; };
+		CD31DA99250FB2B3005C0725 /* NSArray+LocalizedIndex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LocalizedIndex.m"; sourceTree = "<group>"; };
+		CD31DA9B250FC9ED005C0725 /* AppDelegate+Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Window.h"; sourceTree = "<group>"; };
+		CD31DA9C250FC9ED005C0725 /* AppDelegate+Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Window.m"; sourceTree = "<group>"; };
 		CD3CA64A24F1458C004764B7 /* UIButton+AttStrAlignment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AttStrAlignment.h"; sourceTree = "<group>"; };
 		CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AttStrAlignment.m"; sourceTree = "<group>"; };
 		CDA64E391ED9784800BE2EEA /* Utils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utils.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -583,6 +592,8 @@
 				CDAEFB3124FEA16900362E84 /* NSArray+Log.m */,
 				CDAEFA9A24FC021100362E84 /* NSArray+ArrayUtils.h */,
 				CDAEFA9B24FC021100362E84 /* NSArray+ArrayUtils.m */,
+				CD31DA98250FB2B3005C0725 /* NSArray+LocalizedIndex.h */,
+				CD31DA99250FB2B3005C0725 /* NSArray+LocalizedIndex.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -651,6 +662,8 @@
 				CDAEFAFD24FD846B00362E84 /* UIView+Utils.m */,
 				CDAEFB7524FEA95900362E84 /* UINavigationController+FullScreenPopGesture.m */,
 				CDAEFB7624FEA95900362E84 /* UINavigationController+FullScreenPopGesture.h */,
+				CD31DA8B250F9DCF005C0725 /* UINavigationController+Animation.h */,
+				CD31DA8C250F9DD0005C0725 /* UINavigationController+Animation.m */,
 				CDAEFAF624FD793E00362E84 /* UIView+Quartz2D.h */,
 				CDAEFAF724FD793E00362E84 /* UIView+Quartz2D.m */,
 				CDAEFA6324F9362C00362E84 /* UIViewController+CurrentVC.h */,
@@ -667,6 +680,8 @@
 				CDAEFABA24FC242800362E84 /* YYPhotoGroupView.m */,
 				CDAEFB1924FE95B900362E84 /* AlertUtils.h */,
 				CDAEFB1A24FE95B900362E84 /* AlertUtils.m */,
+				CD31DA9B250FC9ED005C0725 /* AppDelegate+Window.h */,
+				CD31DA9C250FC9ED005C0725 /* AppDelegate+Window.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1051,6 +1066,7 @@
 				CDAA8BE724FF66AE00C98D9C /* porterstemmer.mm in Sources */,
 				CDAEFB1B24FE95B900362E84 /* AlertUtils.m in Sources */,
 				CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */,
+				CD31DA9A250FB2B3005C0725 /* NSArray+LocalizedIndex.m in Sources */,
 				CDAEFA9024FA6CD500362E84 /* ThemeManager.m in Sources */,
 				CDAEFA6524F9362C00362E84 /* UIViewController+CurrentVC.m in Sources */,
 				CDAEFB1724FE953000362E84 /* PermissionUtils.m in Sources */,
@@ -1106,12 +1122,14 @@
 				CDAEFAA824FC0A4300362E84 /* UIImage+AsyncClipCorner.m in Sources */,
 				CDAEFABB24FC242800362E84 /* YYPhotoGroupView.m in Sources */,
 				CDAEFA6B24F957FC00362E84 /* UIButton+FadeOut.m in Sources */,
+				CD31DA8D250F9DD0005C0725 /* UINavigationController+Animation.m in Sources */,
 				CDAA8BF824FF69A300C98D9C /* ZWInjector.m in Sources */,
 				CDAA8C2E24FF6BC900C98D9C /* ZWORMTableVersion.m in Sources */,
 				CDAB0C7124EEEE5600C2EA3D /* UIButton+TouchInsets.m in Sources */,
 				CDAEFB0124FD878500362E84 /* CALayer+Utils.m in Sources */,
 				CDAEFB2A24FE981800362E84 /* UserDefaultsManager.m in Sources */,
 				CDAA8C2D24FF6BC900C98D9C /* ZWORMQuery.m in Sources */,
+				CD31DA9D250FC9ED005C0725 /* AppDelegate+Window.m in Sources */,
 				CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */,
 				CDAEFA9924FA9BFD00362E84 /* MKRefreshTableView.m in Sources */,
 				CDAEFAB824FC215300362E84 /* NSObject+RuntimeUtils.m in Sources */,

@@ -5,6 +5,7 @@
 //  Created by Xian Mo on 2020/8/27.
 //  Copyright © 2020 Mo. All rights reserved.
 //
+// $(SRCROOT)/$(TARGET_NAME)/PrefixHeader.pch
 
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
@@ -14,9 +15,9 @@
 
 // define
 #ifdef DEBUG
-#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#define MLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 #else
-#define NSLog(...)
+#define MLog(...) NSLog(...)
 #endif
 
 
@@ -28,17 +29,31 @@
 // UI
 #define Screen_Width            ([UIScreen mainScreen].bounds.size.width)
 #define Screen_Height           ([UIScreen mainScreen].bounds.size.height)
-#define StatusBar_Height        ([UIApplication sharedApplication].statusBarFrame.size.height)
+
+#define StatusBar_Height \
+^{if (@available(iOS 13.0, *)) {\
+UIStatusBarManager *manager = UIApplication.sharedApplication.windows.firstObject.windowScene.statusBarManager;\
+return manager.statusBarFrame.size.height;\
+} else {\
+return UIApplication.sharedApplication.statusBarFrame.size.height;\
+}}()
 
 // adaptive
 #define MScale                  (375.0 / SCREEN_WIDTH)
-#define MSafeTop                ([[UIApplication sharedApplication] statusBarFrame].size.height)
+#define MSafeTop                StatusBar_Height
+
 #define MSafeBottom \
 ^{if (@available(iOS 11.0, *)) {\
+/** 有 SceneDelegate 的项目中放开，或者直接导入 AppDelegate 分类，添加 window 属性 \
+    if (@available(iOS 13.0, *)) {\
+        SceneDelegate *delegate = (SceneDelegate *)UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;\
+        return (CGFloat)delegate.window.safeAreaInsets.bottom;\
+    }\
+*/ \
 return (CGFloat)[UIApplication sharedApplication].delegate.window.safeAreaInsets.bottom;\
 } else {\
 return (CGFloat)0.f;\
-}}()\
+}}()
 
 
 
