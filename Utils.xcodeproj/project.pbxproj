@@ -13,6 +13,7 @@
 		CD31DA9A250FB2B3005C0725 /* NSArray+LocalizedIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = CD31DA99250FB2B3005C0725 /* NSArray+LocalizedIndex.m */; };
 		CD31DA9D250FC9ED005C0725 /* AppDelegate+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = CD31DA9C250FC9ED005C0725 /* AppDelegate+Window.m */; };
 		CD3CA64C24F1458C004764B7 /* UIButton+AttStrAlignment.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */; };
+		CD989FAF251A1B36007C9838 /* NSArray+HighOrderFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = CD989FAE251A1B36007C9838 /* NSArray+HighOrderFunc.m */; };
 		CDA64E3E1ED9784800BE2EEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E3D1ED9784800BE2EEA /* main.m */; };
 		CDA64E411ED9784800BE2EEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E401ED9784800BE2EEA /* AppDelegate.m */; };
 		CDA64E441ED9784800BE2EEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA64E431ED9784800BE2EEA /* ViewController.m */; };
@@ -138,6 +139,8 @@
 		CD31DA9C250FC9ED005C0725 /* AppDelegate+Window.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Window.m"; sourceTree = "<group>"; };
 		CD3CA64A24F1458C004764B7 /* UIButton+AttStrAlignment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+AttStrAlignment.h"; sourceTree = "<group>"; };
 		CD3CA64B24F1458C004764B7 /* UIButton+AttStrAlignment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AttStrAlignment.m"; sourceTree = "<group>"; };
+		CD989FAD251A1B36007C9838 /* NSArray+HighOrderFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+HighOrderFunc.h"; sourceTree = "<group>"; };
+		CD989FAE251A1B36007C9838 /* NSArray+HighOrderFunc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HighOrderFunc.m"; sourceTree = "<group>"; };
 		CDA64E391ED9784800BE2EEA /* Utils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Utils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA64E3D1ED9784800BE2EEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA64E3F1ED9784800BE2EEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -594,6 +597,8 @@
 				CDAEFA9B24FC021100362E84 /* NSArray+ArrayUtils.m */,
 				CD31DA98250FB2B3005C0725 /* NSArray+LocalizedIndex.h */,
 				CD31DA99250FB2B3005C0725 /* NSArray+LocalizedIndex.m */,
+				CD989FAD251A1B36007C9838 /* NSArray+HighOrderFunc.h */,
+				CD989FAE251A1B36007C9838 /* NSArray+HighOrderFunc.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1129,6 +1134,7 @@
 				CDAEFB0124FD878500362E84 /* CALayer+Utils.m in Sources */,
 				CDAEFB2A24FE981800362E84 /* UserDefaultsManager.m in Sources */,
 				CDAA8C2D24FF6BC900C98D9C /* ZWORMQuery.m in Sources */,
+				CD989FAF251A1B36007C9838 /* NSArray+HighOrderFunc.m in Sources */,
 				CD31DA9D250FC9ED005C0725 /* AppDelegate+Window.m in Sources */,
 				CDAB0C7724EEF0CF00C2EA3D /* UtilsPrivate.m in Sources */,
 				CDAEFA9924FA9BFD00362E84 /* MKRefreshTableView.m in Sources */,
