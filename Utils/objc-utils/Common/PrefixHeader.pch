@@ -69,8 +69,8 @@ return (CGFloat)0.f;\
 ^{\
     UIView *view = UIView.new;\
     [view mas_makeConstraints:^(MASConstraintMaker *make) {\
-        make.width.mas_equalTo(w);\
-        make.height.mas_equalTo(h);\
+        if (w > 0) make.width.mas_equalTo(w);\
+        if (h > 0) make.height.mas_equalTo(h);\
     }];\
     return view;\
 }()
